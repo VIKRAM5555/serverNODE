@@ -14,7 +14,7 @@ apps.get("/signin",async function(req,res){
         if(camparePwd){
 
             var token=  jwt.sign({id:userexist._id}, process.env.PrivateKey)
-            res.send({msg:"sucess",token:token})
+            res.send({msg:"suceSss",token:token})
            
 
         }
