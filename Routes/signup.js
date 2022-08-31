@@ -12,7 +12,7 @@ async function hashpwd(pwd){
     return hashpwd
     }
 
-apps.get("/",auth,async function(req,res){
+apps.get("/",async function(req,res){
     res.send(await clients.db("spotify").collection("user").find({}).toArray())
  })
  apps.post("/signup",async function(req,res){
