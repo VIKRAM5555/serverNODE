@@ -2,8 +2,10 @@ import {MongoClient} from 'mongodb'
 import express from 'express';
 import{userroutesignup} from "./Routes/signup.js"
 import{userroutesigin} from "./Routes/signin.js"
-
-import{hallBooking} from "./Routes/hallBooking"
+import{mentors} from "./Routes/mentors.js"
+import{student} from "./Routes/student.js"
+import{hallBooking} from "./Routes/hallBooking.js"
+import{assignStudent} from "./Routes/assignStudent.js"
 import 'dotenv/config'
 import cors from 'cors'
 import { tracks } from './Routes/track.js';
@@ -39,6 +41,8 @@ async function main(){
     app.use("/track",tracks)
     app.use("/song&img",songImg)
     app.use("/hallBooking",hallBooking)
-
+    app.use("/assignStudent",assignStudent)
+    app.use("/mentors",mentors)
+    app.use("/student",student)
     var port=process.env.PORT||3008
     app.listen(port, () => console.log(`server runs in ${port}.......✔✔✔`));
